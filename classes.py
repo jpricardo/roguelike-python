@@ -1,6 +1,7 @@
 #Class "skeletons" for the main scrip and game loop
 
 import random as rd
+import names as ns
 
 
 class Player():
@@ -8,9 +9,10 @@ class Player():
 	roles = {}
 	
 	def __init__(self):
+		self.name = ns.get_first_name()
 		self.hp = 100
 		self.att = rd.randint(0, 100)
-		print(f'HP: {self.hp}, Attack: {self.att}')
+		print(f'Name: {self.name}, HP: {self.hp}, Attack: {self.att}')
 		
 		
 		
