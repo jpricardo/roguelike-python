@@ -1,6 +1,6 @@
 #Main code and game loop
 
-from classes import Player, Role
+from classes import Player, Role, Inventory
 
 player = Player()
 
