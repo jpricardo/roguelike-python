@@ -12,9 +12,27 @@ class Player():
 		self.name = 'jotinha'
 		self.hp = 100
 		self.att = rd.randint(0, 100)
-		self.inventory = Inventory(size=10, items=['Sword'])
+		self.inventory = Inventory(size=10, items=['Sword', 'Shield'])
 		print(f'Name: {self.name}, HP: {self.hp}, Attack: {self.att}, {self.inventory.items}')
 		
+	def pick_item(self, item):
+		self.inventory.add_item(item)
+		
+	def drop_item(self, item=False):
+		if item:
+			self.inventory.items.remove(item)
+		else:
+			self.inventory.items.pop()
+		
+
+
+
+
+
+
+
+
+
 		
 class Inventory():
 	
@@ -25,6 +43,12 @@ class Inventory():
 			self.items = items
 		
 		self.max_size = size
+		
+	def item_list(self):
+		return self.items
+		
+	def add_item(self, item):
+		self.item_list().append(item)
 		
 class Role():
 	amount = 4
